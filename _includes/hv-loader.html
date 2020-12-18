@@ -1,21 +1,16 @@
 {% comment %} Load HTML files into an Iframe {% endcomment %}
 
-<script>
-  function resizeIframe(obj) {
-    let height = $(obj).height($(obj).contents().find("html").height());
-    console.log($(obj).contents().find("html").height());
-    // obj.style.height = "500px";
-  }
-</script>
+<script src="https://raw.githubusercontent.com/davidjbradshaw/iframe-resizer/master/js/iframeResizer.min.js"></script>
+
 
 <script type="text/javascript">
   {% for chart in page.hv-loader %}
-    document.addEventListener("DOMContentLoaded",function(){
       let el = document.getElementById("{{ chart[0] }}")
       if (el===null)
         alert("Error: cannot embed HTML chart because the div element with id '{{ chart[0] }}' does not exist.")
       let spec = "{{ site.baseurl }}/{{ chart[1] }}";
-      el.innerHTML = `<iframe width="100%" scrolling="no" frameborder="0" src="${spec}" onload="resizeIframe(this)"></iframe>`;
-    });
+      el.innerHTML = `<iframe id="${chart[0]}-iframe" width="100%" scrolling="no" frameborder="0" src="${spec}" onload="resizeIframe(this)"></iframe>`;
   {% endfor %}
+
+  iFrameResize({ log: true }, `#${chart[0]}-iframe`)
 </script>
