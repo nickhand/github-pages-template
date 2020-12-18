@@ -7,9 +7,9 @@
       let el = document.getElementById("{{ chart[0] }}")
       if (el===null)
         alert("Error: cannot embed HTML chart because the div element with id '{{ chart[0] }}' does not exist.")
-      let spec = "{{ site.baseurl }}/{{ chart[1] }}";
-      let height = "{{ chart[2] }}";
-      el.innerHTML = `<iframe width="100%" scrolling="no" frameborder="0" src="${spec}" style="height=${height}"></iframe>`;
+      let spec = "{{ site.baseurl }}/{{ chart[1][0] }}";
+      let height = "{{ chart[1][1] }}";
+      el.innerHTML = `<iframe width="100%" scrolling="no" frameborder="0" src="${spec}" style="height=${height}px"></iframe>`;
     });
   {% endfor %}
 </script>
