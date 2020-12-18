@@ -2,7 +2,7 @@
 
 <script>
   function resizeIframe(obj) {
-    console.log(obj.contentWindow.document.body.scrollHeight, obj.contentWindow.document.body.height);
+    console.log(obj.ownerDocument.body.scrollHeight, obj.contentWindow.document.body.height);
     obj.style.height = "500px";
   }
 </script>
