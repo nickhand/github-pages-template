@@ -51,9 +51,9 @@ The shortest route between the Art Museum and the Liberty Bell:
 
 <div id="folium-chart-1"></div>
 
-##
-
 ## Percentage of Households without Internet
+
+The percentage of households without internet by county:
 
 <div id="folium-chart-2"></div>
 
