@@ -3,8 +3,8 @@
 <script>
   function resizeIframe(obj) {
     let height = $(obj).height($(obj).contents().find("body").height());
-    console.log(height);
-    obj.style.height = "500px";
+    console.log($(obj).contents().find("body").height());
+    // obj.style.height = "500px";
   }
 </script>
 
