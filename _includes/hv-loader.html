@@ -1,7 +1,5 @@
 {% comment %} Load HTML files into an Iframe {% endcomment %}
 
-<script src="/assets/js/iframeResizer.min.js"></script>
-
 
 <script type="text/javascript">
   {% for chart in page.hv-loader %}
@@ -14,7 +12,7 @@
       let spec = "{{ site.baseurl }}/{{ chart[1] }}";
       el.innerHTML = `<iframe id="${id}-iframe" width="100%" scrolling="no" frameborder="0" src="${spec}"></iframe>`;
       console.log("HELLO 3");
-      iFrameResize({ log: true, heightCalculationMethod: 'max' }, `#${id}-iframe`);
+      $(`#${id}-iframe`).iFrameResize({ log: true, heightCalculationMethod: 'max' });
       
       console.log($(`#${id}-iframe`))
   });
