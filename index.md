@@ -1,7 +1,7 @@
 ---
 layout: default
 altair-loader:
-  altair-chart-1: "charts/measlesAltair.json"
+  altair-chart-1: ["charts/measlesAltair.json", "400"]
 hv-loader:
   hv-chart-1: ["charts/measlesHvplot.html", "500"]
 folium-loader:
